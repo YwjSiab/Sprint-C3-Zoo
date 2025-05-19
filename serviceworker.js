@@ -2,7 +2,6 @@ const CACHE_NAME = "ntc-zoo-cache-v1";
 const FILES_TO_CACHE = [
   "/Sprint-C3-Zoo/",
   "/Sprint-C3-Zoo/index.html",
-  "/Sprint-C3-Zoo/styles.css",
   "/Sprint-C3-Zoo/zoo.js",
   "/Sprint-C3-Zoo/manifest.json",
   "/Sprint-C3-Zoo/icon-192.png",
