@@ -5,7 +5,8 @@ const FILES_TO_CACHE = [
   "/Sprint-C3-Zoo/styles.css",
   "/Sprint-C3-Zoo/zoo.js",
   "/Sprint-C3-Zoo/manifest.json",
-  "/Sprint-C3-Zoo/icons/icon-192.png"
+  "/Sprint-C3-Zoo/icon-192.png",
+  "/Sprint-C3-Zoo/icon-512.png"
 ];
 
 self.addEventListener("install", (evt) => {
