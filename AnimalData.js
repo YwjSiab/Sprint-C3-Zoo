@@ -108,10 +108,14 @@ export const showLoading = (isLoading) => {
       
       // Animal image
       const img = document.createElement("img");
-      img.src = animal.image || "images/default.png";
-      img.alt = `${animal.name} the ${animal.species}`;
-      img.classList.add("animal-image");
-      card.appendChild(img);
+img.src = animal.image || "images/default.png";
+img.onerror = () => {
+  img.src = "images/default.png";
+};
+img.alt = `${animal.name} the ${animal.species}`;
+img.classList.add("animal-image");
+card.appendChild(img);
+
   
       // Status line with span ID
 const statusLine = document.createElement("p");
@@ -230,10 +234,14 @@ card.appendChild(healthLine);
         
         // Animal image
         const img = document.createElement("img");
-        img.src = animal.image || "images/default.png";
-        img.alt = `${animal.name} the ${animal.species}`;
-        img.classList.add("animal-image");
-        card.appendChild(img);
+img.src = animal.image || "images/default.png";
+img.onerror = () => {
+  img.src = "images/default.png";
+};
+img.alt = `${animal.name} the ${animal.species}`;
+img.classList.add("animal-image");
+card.appendChild(img);
+
   
         // Buttons for toggling status and health
         const toggleButton = document.createElement('button');
