@@ -18,14 +18,23 @@ self.addEventListener("fetch", (evt) => {
   evt.respondWith(
     caches.match(evt.request).then((cachedRes) => {
       if (cachedRes) return cachedRes;
+
       return fetch(evt.request).then((networkRes) => {
+        // Clone the response only once
+        const resClone = networkRes.clone();
+
         if (evt.request.destination === "image") {
           caches.open("image-cache").then((cache) => {
-            cache.put(evt.request, networkRes.clone());
+            cache.put(evt.request, resClone);
           });
         }
+
         return networkRes;
+      }).catch((err) => {
+        console.error("Fetch failed:", err);
+        return new Response("Offline and resource not cached", { status: 503 });
       });
     })
   );
 });
+
